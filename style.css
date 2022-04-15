@@ -20,8 +20,21 @@ body {
 }
 
 Button {
-  
+  padding: 15px;
+border-radius: 15px;
 }
+
+#gameButtonArea > button {
+  width:150px;
+  height:150px;
+  margin:2px;
+}
+
+.hidden {
+  display: none;
+}
+
+
 
 h1 {
   font-family: Courier New, sans-serif; 
