@@ -12,6 +12,8 @@ html {
 
 /* adjust typography defaults */
 body {
+  background-color: slategrey;
+  color: white; 
   margin: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
