@@ -12,11 +12,19 @@ html {
 
 /* adjust typography defaults */
 body {
-  background-color: slategrey;
+  background-color: slateblue;
   color: white; 
   margin: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
+}
+
+Button {
+  
+}
+
+h1 {
+  font-family: Courier New, sans-serif; 
 }
 
 /* images and videos max out at full width */
