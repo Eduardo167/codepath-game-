@@ -12,7 +12,7 @@ html {
 
 /* adjust typography defaults */
 body {
-  background-color: slateblue;
+  background-color: CadetBlue;
   color: white; 
   margin: 1rem;
   font-family: sans-serif;
@@ -67,7 +67,7 @@ border-radius: 15px;
 
 
 h1 {
-  font-family: Courier New, sans-serif; 
+  font-family: Copperplate, Papyrus, fantasy; 
 }
 
 /* images and videos max out at full width */
