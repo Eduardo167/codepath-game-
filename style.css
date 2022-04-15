@@ -35,6 +35,41 @@ border-radius: 15px;
 }
 
 
+#button1 {
+    background: lightgreen;
+}
+#button2 {
+    background: lightpink;
+}
+#button3 {
+    background: lightyellow;
+}
+#button4 {
+    background: lightblue;
+}
+#button5 {
+    background: lightgray;
+}
+
+
+#button1:active {
+    background:green;
+}
+
+#button2:active {
+    background:red;
+}
+
+#button3:active {
+    background:yellow;
+}
+
+#button4:active {
+    background:blue;
+}
+#button5:active {
+    background:black;
+}
 
 h1 {
   font-family: Courier New, sans-serif; 
