@@ -109,14 +109,33 @@ function winGame(){
   alert("Game Over. You have won!");
 }
 
- if (pattern[guessCounter] == btn) {
-    if (guessCounter == progress) {
-      if (progress == pattern.length - 1) {
+
+function guess(btn){
+  console.log("user guessed: " + btn);
+  
+  if(!gamePlaying){
+    return;
+  }
+  
+  if(pattern[guessCounter] == btn){
+    //Guess was correct!
+    if(guessCounter == progress){
+      if(progress == pattern.length - 1){
+        //GAME OVER: WIN!
         winGame();
-      } else {
+      }else{
+        //Pattern correct. Add next segment
         progress++;
         playClueSequence();
       }
-    } else {
+    }else{
+      //so far so good... check the next guess
       guessCounter++;
-      
+    }
+  
+    }else{
+    //Guess was incorrect
+    //GAME OVER: LOSE!
+    loseGame();
+  }
+}    
