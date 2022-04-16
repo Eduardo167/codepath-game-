@@ -13,7 +13,7 @@ var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.8;  //must be between 0.0 and 1.0
-var guessCounter = 0;+
+var guessCounter = 0;
 
 function startGame(){
     //initialize game variables
@@ -109,31 +109,14 @@ function winGame(){
   alert("Game Over. You have won!");
 }
 
-function guess(btn){
-  console.log("user guessed: " + btn);
-  
-  if(!gamePlaying){
-    return;
-  }
-  
-  if(pattern[guessCounter] == btn){
-    //Guess was correct!
-    if(guessCounter == progress){
-      if(progress == pattern.length - 0){
-        //GAME OVER: WIN!
+ if (pattern[guessCounter] == btn) {
+    if (guessCounter == progress) {
+      if (progress == pattern.length - 1) {
         winGame();
-      }else{
-        //Pattern correct. Add next segment
+      } else {
         progress++;
         playClueSequence();
       }
-    }else{
-      //so far so good... check the next guess
+    } else {
       guessCounter++;
-    }
-  }else{
-    //Guess was incorrect
-    //GAME OVER: LOSE!
-    loseGame();
-  }
-}    
+      
