@@ -13,7 +13,7 @@ var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.8;  //must be between 0.0 and 1.0
-var guessCounter = 0;
+var guessCounter = 0;+
 
 function startGame(){
     //initialize game variables
