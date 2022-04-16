@@ -130,7 +130,7 @@ function guess(btn){
       }
     }else{
       //so far so good... check the next guess
-      guessCounter++; guesstotal 
+      if(progress == guessCounter++ - 1)
     }
   
     }else{
