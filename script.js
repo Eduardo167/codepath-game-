@@ -126,7 +126,7 @@ function guess(btn){
       }else{
         //Pattern correct. Add next segment
         progress++;
-        playClueSequence();
+        playClueSequence(); guessCounter=1
       }
     }else{
       //so far so good... check the next guess
