@@ -111,31 +111,31 @@ function winGame(){
 
 
 function guess(btn){
-  console.log("user guessed: " + btn);
+console.log("user guessed: " + btn);
   
-  if(!gamePlaying){
-    return;
-  }
+if(!gamePlaying){
   
-  if(pattern[guessCounter] == btn){
-    //Guess was correct!
-    if(guessCounter == progress){
-      if(progress == pattern.length - 1){
-        //GAME OVER: WIN!
-        winGame();
-      }else{
-        //Pattern correct. Add next segment
-        progress++;
-        playClueSequence(); guessCounter=1
-      }
-    }else{
-      //so far so good... check the next guess
-      if(progress == guessCounter++ - 1)
-    }
-  
-    }else{
-    //Guess was incorrect
-    //GAME OVER: LOSE!
-    loseGame();
-  }
-}    
+return;
+}
+if(pattern[guessCounter] == btn){
+//Guess was correct!
+if(guessCounter == progress){
+if(progress == pattern.length - 1){
+//GAME OVER: WIN!
+winGame();
+}else{
+//Pattern correct. Add next segment
+progress++;
+playClueSequence();
+}
+}else{
+//so far so good... check the next guess
+guessCounter++;
+}
+}else{
+//Guess was incorrect
+//GAME OVER: LOSE!
+loseGame();
+}
+
+}
