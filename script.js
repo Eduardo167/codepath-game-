@@ -131,7 +131,7 @@ function guess(btn) {
     }
     //guessCounter++;
   } else {
-   if (lostCount < 33) lostCount++;
+   if (lostCount < 0) lostCount++;
     else loseGame();
   }
 }
