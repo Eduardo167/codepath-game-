@@ -15,9 +15,10 @@ var tonePlaying = false;
 var volume = 0.8;  //must be between 0.0 and 1.0
 var guessCounter = 0;
 var lostCount = 0;
+var clueLength = 10;
 
 function startGame(){
-    //initialize game variables
+   
     progress = 0;
     gamePlaying = true;
 document.getElementById("startBtn").classList.add("hidden");
@@ -110,26 +111,31 @@ function winGame(){
   alert("Game Over. You have won!");
 }
 
-
-function guess(btn) {
+function guess(btn){
   console.log("user guessed: " + btn);
-  if (!gamePlaying) {
+  
+  if(!gamePlaying){
     return;
   }
-  if (pattern[guessCounter] == btn) {
-    if (guessCounter == progress) {
-      if (progress == pattern.length - 1) {
+  
+  if(pattern[guessCounter] == btn){
+    //Guess was correct!
+    if(guessCounter == progress){
+      if(progress == pattern.length - 1){
+        //GAME OVER: WIN!
         winGame();
-      } else {
+      }else{
+        //Pattern correct. Add next segment
         progress++;
         playClueSequence();
       }
-    } else {
+    }else{
+      //so far so good... check the next guess
       guessCounter++;
     }
-    //guessCounter++;
-  } else {
-   if (lostCount < 30) lostCount++;
-    else loseGame();
+  }else{
+    //Guess was incorrect
+    //GAME OVER: LOSE!
+    loseGame();
   }
-}
+}    
