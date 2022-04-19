@@ -107,35 +107,31 @@ function loseGame(){
 }
 
 function winGame(){
-  stopGame();
+ if (pattern.length)
+  stopGame(); 
   alert("Game Over. You have won!");
 }
 
-function guess(btn){
+
+function guess(btn) {
   console.log("user guessed: " + btn);
-  
-  if(!gamePlaying){
+  if (!gamePlaying) {
     return;
   }
-  
-  if(pattern[guessCounter] == btn){
-    //Guess was correct!
-    if(guessCounter == progress){
-      if(progress == pattern.length - 1){
-        //GAME OVER: WIN!
+  if (pattern[guessCounter] == btn) {
+    if (guessCounter == progress) {
+      if (progress == pattern.length - 1) {
         winGame();
-      }else{
-        //Pattern correct. Add next segment
+      } else {
         progress++;
         playClueSequence();
       }
-    }else{
-      //so far so good... check the next guess
+    } else {
       guessCounter++;
     }
-  }else{
-    //Guess was incorrect
-    //GAME OVER: LOSE!
-    loseGame();
+    //guessCounter++;
+  } else {
+   if (lostCount < 33) lostCount++;
+    else loseGame();
   }
-}    
+}
