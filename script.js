@@ -129,7 +129,7 @@ function guess(btn) {
     }
     //guessCounter++;
   } else {
-   if (lostCount < 10) lostCount++;
+   if (lostCount < 30) lostCount++;
     else loseGame();
   }
 }
