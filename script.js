@@ -14,6 +14,7 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.8;  //must be between 0.0 and 1.0
 var guessCounter = 0;
+var lostCount = 0;
 
 function startGame(){
     //initialize game variables
@@ -110,32 +111,25 @@ function winGame(){
 }
 
 
-function guess(btn){
-console.log("user guessed: " + btn);
-  
-if(!gamePlaying){
-  
-return;
-}
-if(pattern[guessCounter] == btn){
-//Guess was correct!
-if(guessCounter == progress){
-if(progress == pattern.length - 1){
-//GAME OVER: WIN!
-winGame();
-}else{
-//Pattern correct. Add next segment
-progress++;
-playClueSequence();
-}
-}else{
-//so far so good... check the next guess
-guessCounter++;
-}
-}else{
-//Guess was incorrect
-//GAME OVER: LOSE!
-loseGame();
-}
-
+function guess(btn) {
+  console.log("user guessed: " + btn);
+  if (!gamePlaying) {
+    return;
+  }
+  if (pattern[guessCounter] == btn) {
+    if (guessCounter == progress) {
+      if (progress == pattern.length - 1) {
+        winGame();
+      } else {
+        progress++;
+        playClueSequence();
+      }
+    } else {
+      guessCounter++;
+    }
+    //guessCounter++;
+  } else {
+   if (lostCount < 10) lostCount++;
+    else loseGame();
+  }
 }
